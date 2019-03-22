@@ -1,0 +1,76 @@
+body{
+	padding-top: 70px;
+	padding-bottom: 70px;
+	font-size: 20px;
+}
+.container{
+	padding-top:50px;
+	font-size: 20px;
+}
+.header{
+	background-color: rgb(206,150,150);	
+}
+h1{
+	padding:20px;
+	font-size: 50px;
+	color: rgb(0,0,255,0.5);
+}
+.table{
+	padding: 30px;
+}
+.bang{
+	border:2px solid rgb(0,0,0);
+	width: 100%;
+	height: 300px;
+	padding-top: 30px;
+}
+.bang th,td{
+	border: 2px solid rgb(0,0,0);
+	width: 16%;
+	height: 7px;
+	text-align: center;
+}
+.bang .danger th:hover{
+	background-color: rgb(150,230,185);
+}
+.bang td:hover{
+	background-color: rgb(150,230,185);
+}
+.bang .danger{
+	background-color: rgb(206,150,150);
+}
+.col-md-6{
+	padding: 50px;
+}
+.col-md-6 input{
+	border:none;
+	background-color: rgb(168,58,62);
+	color:rgb(255,255,255,0.7);
+	font-size: 35px;
+}
+.col-md-6 input:hover{
+	color: rgb(255,255,255);
+}
+blockquote{
+	padding:10px 20px;
+	border-left: 7px solid #eee;
+}
+.footer{
+	background: rgb(59,50,50);
+	height: 70px;
+	padding:10px;
+}
+.footer .container{
+	padding:10px;
+}
+.footer .col-md-12 p{
+	color: rgb(255,255,255,0.5);
+}
+.footer .col-md-12 a{
+	padding:0px;
+	color: rgb(255,255,255,0.5);
+}
+.footer .col-md-12 a:hover{
+	color: rgb(255,255,255);
+	text-decoration: none;
+}
