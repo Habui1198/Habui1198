@@ -1,0 +1,88 @@
+body{
+	background-image: url(../img/b2.jpg);
+	background-repeat: no-repeat;
+	background-size: 100%;
+}
+.header{
+	color: rgb(255,255,255);
+	letter-spacing: 35px;
+	padding: 100px 100px 30px 100px;
+}
+.content .container{
+	border: 2px solid rbg(230,245,250);
+	background: rgb(50,50,50,0.5);
+ 	width:35%;
+ 	padding: 30px 100px;
+}
+.content .username{
+	padding:10px;
+	position: relative;
+}
+.content .username input{
+	width: 250px;
+	padding-right: 30px;
+}
+.content .password{
+	padding:10px;
+	position: relative;
+}
+.content .password input{
+	width: 250px;
+	padding-right: 30px;
+}
+.content .rememberpassword{
+	font-size: 15px;
+	color: rgb(230,245,250);
+	padding: 10px;
+}
+.content .login{
+	padding:5px 90px;
+}
+.content .login input{
+	color: rgb(100,100,100);
+	padding:5px 20px;
+}
+.content .login input:hover{
+	background: rgb(150,250,135);
+}
+.content .forgotpassword{
+	padding:10px 0px;
+}
+.content .forgotpassword a{
+	color: rgb(230,245,250);
+}
+.content .forgotpassword a:hover{
+	color: rgb(130,150,250);
+	text-decoration: none;
+}
+.content .createAccount{
+	padding-bottom: 10px;
+}
+.content .createAccount a{
+	color: rgb(230,245,250);
+}
+.content .createAccount a:hover{
+	color: rgb(130,150,250);
+	text-decoration: none;
+}
+.footer{
+	padding-top:60px;
+}
+.footer p{
+	font-size: 20px;
+	color: rgb(230,245,250);
+}
+.footer a{
+	font-size: 20px;
+	color: rgb(230,245,250);
+}
+.footer a:hover{
+	color: rgb(250;168,192);
+	text-decoration: none;
+}
+span.icon1, span.icon2 {
+    font-size: 1.1em;
+    position: absolute;
+    right: 6%;
+    top:23%;
+}
