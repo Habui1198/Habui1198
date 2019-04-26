@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Danh sách công ty đối tác</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+	<h2>DANH SÁCH CÁC CÔNG TY ĐỐI TÁC</h2>
+	<table>
+		<tr>
+			<th>Chọn</th>
+			<th>Mã</th>
+			<th>Tên công ty</th>
+			<th>Địa chỉ website</th>
+			<th>Số hợp đồng đang thực hiện</th>
+			<th>Số hợp đồng sắp kí</th>
+		</tr>
+		<tr id="row1" name="row" class ="row">
+			<td>
+				<input type="checkbox" id="checkbox1" name="checkbox" class="checkbox" onclick="addmau()">
+			</td>
+			<td>1</td>
+			<td>ECOPRO Co.,LTD</td>
+			<td>http://www.ecoprovn.com</td>
+			<td>10</td>	
+			<td>2</td>
+		</tr>
+		<tr id="row2" name="row" class="row">
+			<td>
+				<input type="checkbox" id="checkbox2" name="checkbox" class="checkbox" onclick="addmau()">
+			</td>
+			<td>2</td>
+			<td>WAVINA.COM</td>
+			<td>http://wavina.com</td>
+			<td>9</td>
+			<td>0</td>
+		</tr>
+		<tr id="row3" name="row" class="row">
+			<td>
+				<input type="checkbox" id="checkbox3"  name="checkbox" class="checkbox" onclick="addmau()">
+			</td>
+			<td>19</td>
+			<td>www.vietfracht.com.vn</td>
+			<td>http://www.vietfracht.com.vn</td>
+			<td>0</td>
+			<td>0</td>
+		</tr>
+		<tr id="row4" name="row" class="row">
+			<td>
+				<input type="checkbox" id="checkbox4"  name="checkbox" class="checkbox" onclick="addmau()">
+			</td>
+			<td>21</td>
+			<td>www.yangming.com.vn</td>
+			<td>http://www.yangming.com.vn</td>
+			<td>0</td>
+			<td>0</td>
+		</tr>
+		<tr id="row5" name="row" class="row">
+			<td>
+				<input type="checkbox" id="checkbox5"  name="checkbox" class="checkbox" onclick="addmau()">
+			</td>
+			<td>20</td>
+			<td>www.apl.com.vn</td>
+			<td>http://www.apl.com.vn</td>
+			<td>0</td>
+			<td>0</td>
+		</tr>
+		<tr id="row6" name="row" class="row">
+			<td>
+				<input type="checkbox" id="checkbox6"  name="checkbox" class="checkbox" onclick="addmau()">
+			</td>
+			<td>16</td>
+			<td>www.mpi.gov.vn</td>
+			<td>http:/www.mpi.gov.vn</td>
+			<td>0</td>
+			<td>0</td>
+		</tr>
+		<tr id="row7" name="row" class="row">
+			<td>
+				<input type="checkbox" id="checkbox7"  name="checkbox" class="checkbox" onclick="addmau()">
+			</td>
+			<td>15</td>
+			<td>Bộ kế hoạch và đầu tư</td>
+			<td>http://www.customs.gov.vn</td>
+			<td>0</td>
+			<td>0</td>
+		</tr>
+		<tr id="row8" name="row" class="row">
+			<td>
+				<input type="checkbox" id="checkbox8"  name="checkbox" class="checkbox" onclick="addmau()">
+			</td>
+			<td>11</td>
+			<td>Cơ sở dữ liệu Luật Việt Nam</td>
+			<td>http://www.luatvietnam.com.vn</td>
+			<td>0</td>
+			<td>2</td>
+		</tr>
+		<tr id="row9" name="row" class="row">
+			<td>
+				<input type="checkbox" id="checkbox9"  name="checkbox" class="checkbox" onclick="addmau()">
+			</td>
+			<td>18</td>
+			<td>www.wanhai.com.vn</td>
+			<td>http://www.wanhai.com.vn</td>
+			<td>0</td>
+			<td>0</td>
+		</tr>
+		<tr id="row10" name="row" class="row">
+			<td>
+				<input type="checkbox" id="checkbox10"  name="checkbox" class="checkbox" onclick="addmau()">
+			</td>
+			<td>17</td>
+			<td>www.vietfracht.com.vn</td>
+			<td>http://www.vietfracht.com.vn</td>
+			<td>0</td>
+			<td>0</td>
+		</tr>
+	</table>
+	<script type="text/javascript">
+		function addmau(){
+			var row=document.getElementsByClassName('row');
+			var check=document.getElementsByClassName('checkbox');
+			for(var i=0;i<check.length;i++){
+				if(check[i].checked == true){
+					row[i].classList.add("addmau");
+				}
+				else{
+					row[i].classList.remove("addmau");
+				}				
+			}
+		}
+	/*	function doimau1(){
+		var obj=document.getElementById('row1');
+		var check=document.getElementById('checkbox1');
+		
+			if(check.checked==true){
+				console.log(check)
+				obj.style.backgroundColor = "red";
+			}
+			else
+				obj.style.backgroundColor="#f0f0f0";
+		}
+		function doimau2(){
+		var obj=document.getElementById('row2');
+		var check=document.getElementById('checkbox2');
+		
+			if(check.checked==true){
+				console.log(check)
+				obj.style.backgroundColor = "red";
+			}
+			else
+				obj.style.backgroundColor="#d0d0d0";
+		}
+		function doimau3(){
+		var obj=document.getElementById('row3');
+		var check=document.getElementById('checkbox3');
+		
+			if(check.checked==true){
+				console.log(check)
+				obj.style.backgroundColor = "red";
+			}
+			else
+				obj.style.backgroundColor="#f0f0f0";
+		}
+		function doimau4(){
+		var obj=document.getElementById('row4');
+		var check=document.getElementById('checkbox4');
+		
+			if(check.checked==true){
+				console.log(check)
+				obj.style.backgroundColor = "red";
+			}
+			else
+				obj.style.backgroundColor="#d0d0d0";
+		}
+		function doimau5(){
+		var obj=document.getElementById('row5');
+		var check=document.getElementById('checkbox5');
+		
+			if(check.checked==true){
+				console.log(check)
+				obj.style.backgroundColor = "red";
+			}
+			else
+				obj.style.backgroundColor="#f0f0f0";
+		}
+		function doimau6(){
+		var obj=document.getElementById('row6');
+		var check=document.getElementById('checkbox6');
+		
+			if(check.checked==true){
+				console.log(check)
+				obj.style.backgroundColor = "red";
+			}
+			else
+				obj.style.backgroundColor="#d0d0d0";
+		}
+		function doimau7(){
+		var obj=document.getElementById('row7');
+		var check=document.getElementById('checkbox7');
+		
+			if(check.checked==true){
+				console.log(check)
+				obj.style.backgroundColor = "red";
+			}
+				obj.style.backgroundColor="#f0f0f0";
+		}
+		function doimau8(){
+		var obj=document.getElementById('row8');
+		var check=document.getElementById('checkbox8');
+		
+			if(check.checked==true){
+				console.log(check)
+				obj.style.backgroundColor = "red";
+			}
+			else
+				obj.style.backgroundColor="#d0d0d0";
+		}
+		function doimau9(){
+		var obj=document.getElementById('row9');
+		var check=document.getElementById('checkbox9');
+		
+			if(check.checked==true){
+				console.log(check)
+				obj.style.backgroundColor = "red";
+			}
+			else
+				obj.style.backgroundColor="#f0f0f0";
+		}
+		function doimau10(){
+		var obj=document.getElementById('row10');
+		var check=document.getElementById('checkbox10');
+		
+			if(check.checked==true){
+				console.log(check)
+				obj.style.backgroundColor = "red";
+			}
+			else
+				obj.style.backgroundColor="#d0d0d0";
+		}*/
+
+	</script>
+</body>
+</html>
