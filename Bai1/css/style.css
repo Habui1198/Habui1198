@@ -1,0 +1,48 @@
+.form{
+	border-top: 3px solid #000000;
+	border-right: 1px solid #000000;
+	border-bottom: 1px solid #000000;
+	border-left: 3px solid #000000;
+	margin-top: 50px;
+	margin-left: 20%;
+	margin-bottom: 50px;
+	width: 60%;
+	height: auto;
+}
+h1{
+	letter-spacing: 11px;
+}
+.col-md-7{
+	margin-top: 20px
+}
+.input{
+	height: 30px;
+	width: 100%;
+}
+#fullname,#age,#email,#username,#password,#repassword{
+	border-right: none;
+	border-bottom: none;
+	background: yellow;
+	box-shadow: 3px rgb(0,0,0,0.7);
+}
+.col-md-2{
+	margin-top: 20px;
+}
+.col-md-5{
+	margin-top: 20px;
+}
+input[type="submit"]:hover{
+	background: rgb(200,159,168);
+}
+input[name="Reset"]{
+	margin-left: 30px;
+}
+.footer{
+	margin-bottom: 50px;
+}
+select{
+	width: 70%;
+}
+#errorFullname,#errorAge,#errorEmail,#errorUsername,#errorPassword,#errorRepassword{
+	color: red;
+}

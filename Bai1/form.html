@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Form đăng ký học</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+<body>
+	<form method="post" action="" class="form" id="login-form" onsubmit="return false">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-5"></div>
+				<div class="col-md-7">
+					<h1>RIGISTER FORM</h1>
+				</div>
+				<div class="col-md-5">
+					<label>Full name</label>
+				</div>
+				<div class="col-md-7">
+					<input type="text" id="fullname" class="input" name="fullname" value="" onkeyup="this.style.backgroundColor='yellow'" onkeydown="this.style.backgroundColor='violet'" >
+					<p id="errorFullname"></p>
+				</div>
+				<div class="col-md-5">
+					<label>Address</label>
+				</div>
+				<div class="col-md-7">
+					<input type="text" class="input" name="Address" id="Address" onkeyup="this.style.backgroundColor='yellow'" onkeydown="this.style.backgroundColor='violet'">
+				</div>
+				<div class="col-md-5">
+					<label>Sex</label>
+				</div>
+				<div class="col-md-2">
+					<input type="radio" name="Male" id='Male'>
+					<label>Male</label>
+				</div>
+				<div class="col-md-5">
+					<input type="radio" name="Female" id="Female">
+					<label>Female</label>
+				</div>
+				<div class="col-md-5">
+					<label>Age</label>
+				</div>
+				<div class="col-md-7">
+					<input type="number" id="age" name="Age" class="input" onkeyup="this.style.backgroundColor='yellow'" onkeydown="this.style.backgroundColor='violet'">
+					<p id="errorAge"></p>
+				</div>
+				<div class="col-md-5">
+					<label>Email</label>
+				</div>
+				<div class="col-md-7">
+					<input type="Email" id="email" name="Email" class="input" onkeyup="this.style.backgroundColor='yellow'" onkeydown="this.style.backgroundColor='violet'">
+					<p id="errorEmail"></p>
+				</div>
+				<div class="col-md-5">
+					<label>Phone</label>
+				</div>
+				<div class="col-md-7">
+					<input type="text" class="input" name="Phone" id="phone" onkeyup="this.style.backgroundColor='yellow'" onkeydown="this.style.backgroundColor='violet'">
+				</div>
+				<div class="col-md-5">
+					<label>Course</label>
+				</div>
+				<div class="col-md-2">
+					<input type="checkbox" name="English" id="english">
+					<label>English</label>
+				</div>
+				<div class="col-md-2">
+					<input type="checkbox" name="Business" id="business">
+					<label>Business</label>
+				</div>
+				<div class="col-md-2">
+					<input type="checkbox" name="IT" id="it">
+					<label>IT</label>
+				</div>
+				<div class="col-md-5">
+					<label>User Name</label>
+				</div>
+				<div class="col-md-7">
+					<input type="text" id="username" name="Username" class="input" onkeyup="this.style.backgroundColor='yellow'" onkeydown="this.style.backgroundColor='violet'">
+					<p id="errorUsername"></p>
+				</div>
+				<div class="col-md-5">
+					<label>Password</label>
+				</div>
+				<div class="col-md-7">
+					<input type="Password" id="password" name="Password" class="input" onkeyup="this.style.backgroundColor='yellow'" onkeydown="this.style.backgroundColor='violet'">
+					<p id="errorPassword"></p>
+				</div>
+				<div class="col-md-5">
+					<label>Re-Password</label>
+				</div>
+				<div class="col-md-7">
+					<input type="Password" id="repassword" name="Repassword" class="input" onkeyup="this.style.backgroundColor='yellow'" onkeydown="this.style.backgroundColor='violet'">
+					<p id="errorRepassword"></p>
+				</div>
+				<div class="col-md-5">
+					<label>Comment</label>	
+				</div>
+				<div class="col-md-7">
+					<select multiple class="form-control">
+						<option value=""></option>
+						<option value=""></option>
+						<option value=""></option>
+						<option value=""></option>
+						<option value=""></option>
+					</select>
+				</div>
+				<div class="col-md-5"></div>
+				<div class="col-md-7 footer">
+					<input  class="btn btn-success" type="submit" name="Submit" value="Submit" onclick="kiemtra();return true">
+					<input class="btn btn-warning" type="submit" name="Reset" value="Reset">
+				</div>
+			</div>
+		</div>
+	</form>
+	<script type="text/javascript">
+		function kiemtra(){
+			var errorFullname = document.getElementById('errorFullname');
+			var errorAge = document.getElementById('errorAge');
+			var errorEmail=document.getElementById('errorEmail');
+			var errorUsername=document.getElementById('errorUsername');
+			var errorPassword=document.getElementById('errorPassword');
+			var errorRepassword=document.getElementById('errorRepassword');
+			if (errorFullname){
+				errorFullname.innerHTML = '';
+			}
+			if (errorAge){
+				errorAge.innerHTML='';
+			}
+			if(errorEmail){
+				errorEmail.innerHTML='';
+			}
+			if(errorUsername){
+				errorUsername.innerHTML='';
+			}
+			if (errorPassword){
+				errorPassword.innerHTML='';
+			}
+			if (errorRepassword){
+				errorRepassword.innerHTML='';
+			}
+			var fullname = document.getElementById("fullname").value;
+			var age=document.getElementById('age').value;
+			var email=document.getElementById('email').value;
+			var username=document.getElementById('username').value;
+			var password=document.getElementById('password').value;
+			var repassword=document.getElementById('repassword').value;
+			//Kiểm tra giá trị trong ô fullname,age,email,username,password,repassword đã được nhập chưa???
+			if(fullname =="")
+				document.getElementById("errorFullname").innerHTML='Họ tên không được để trống';
+			else if (age=="")
+				document.getElementById("errorAge").innerHTML='Tuổi không được để trống';
+			else if (age<16)
+				document.getElementById("errorAge").innerHTML='Bạn phải nhập tuổi lớn hơn 16';
+			else if(email=="")
+				document.getElementById("errorEmail").innerHTML='Email không được để trống';
+			else if(username=="")
+				document.getElementById("errorUsername").innerHTML='Username không được để trống';
+			else if(username.length<6||username.length>30)
+				document.getElementById("errorUsername").innerHTML='Username phải có chiều dài từ 6 đến 30 ký tự';
+			else if(password=="")
+				document.getElementById("errorPassword").innerHTML='Password không được để trống';
+			else if(password.length<6||password.length>30)
+				document.getElementById("errorPassword").innerHTML='Password phải có chiều dài từ 6 đến 30 ký tự';
+			else if(repassword=="")
+				document.getElementById("errorRepassword").innerHTML='Re-Password không được để trống';	
+			else if(password!=repassword)
+				document.getElementById("errorRepassword").innerHTML="Re-Password không được khác Password";	
+			else 
+				alert('Đăng nhập thành công!!!');
+		}
+	</script>
+</body>
+</html>
