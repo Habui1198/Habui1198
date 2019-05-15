@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Danh sách học sinh</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+	<h1>Danh sách học sinh</h1>
+	<table id="table">
+		<tr>
+			<th>Mã học sinh</th>
+			<th>Họ và tên</th>
+			<th>Lớp</th>
+			<th>Trường</th>
+			<th colspan="2">
+		</tr>
+		<tr name="row">
+			<td>123123</td>
+			<td>Trần Văn A</td>
+			<td>11A2</td>
+			<td>THPT Nguyễn Hữu Tiến</td>
+			<td><input type="submit" name="edit" value="Edit"></td>
+			<td><input type="submit" name="delete" value="Delete"></td>
+		</tr>
+		<tr name="row">
+			<td>123134</td>
+			<td>Nguyễn Văn B</td>
+			<td>11A2</td>
+			<td>THPT Nguyễn Hữu Tiến</td>
+			<td><input type="submit" name="edit" value="Edit"></td>
+			<td><input type="submit" name="delete" value="Delete"></td>
+		</tr>
+		<tr name="row">
+			<td>123456</td>
+			<td>Hoàng Thị H</td>
+			<td>11A2</td>
+			<td>THPT Nguyễn Hữu Tiến</td>
+			<td><input type="submit" name="edit" value="Edit"></td>
+			<td><input type="submit" name="delete" value="Delete"></td>
+		</tr>
+	</table>
+	<form action="">
+		<div>
+			<label for="">Mã học sinh:</label><br>
+			<input type="text" name="mahocsinh" id="mahocsinh" placeholder="Nhập mã học sinh" required="">
+		</div>
+		<div>
+			<label for="">Họ và tên:</label><br>
+			<input type="text" name="hoten" id="hoten" placeholder="Nhập họ và tên" required="">
+		</div>
+		<div>
+			<label for="">Lớp:</label><br>
+			<input type="text" name="lop" id="lop" placeholder="Nhập lớp" required="">
+		</div>
+		<div>
+			<label for="">Trường:</label><br>
+			<input type="text" name="Trường" id="truong" placeholder="Nhập trường" required="">
+		</div>
+		<input type="submit" name="addStudent" id="addStudent" value="Thêm học sinh" onclick="add();return false">
+	</form>
+	<script>
+		/*document.getElementsByName('delete')[0].onclick=function(){
+			document.getElementById('table').deleteRow(1);
+		}*/
+		//document.getElementsByName('edit')[0].onclick=funtion(){
+		//	document.getElementById('table').changeRow(1);
+		//}
+		var idx,table=document.getElementById('table');
+		function add(){
+			var mahocsinh=document.getElementById('mahocsinh').value;
+			var	hoten=document.getElementById('hoten').value;
+			var	lop=document.getElementById('lop').value;
+			var	truong=document.getElementById('truong').value;
+			var idx = document.getElementById('table').children[0].children.length;
+			if(mahocsinh==""||hoten==""||lop==""||truong=="")
+				alert("Vui lòng điền đầy đủ thông tin!!!");
+			else{
+			var row=table.insertRow(idx);
+			var cell1=row.insertCell(0);
+			var cell2=row.insertCell(1);
+			var cell3=row.insertCell(2);
+			var cell4=row.insertCell(3);
+			var cell5=row.insertCell(4);
+			var cell6=row.insertCell(5);
+			cell1.innerHTML=mahocsinh;
+			cell2.innerHTML=hoten;
+			cell3.innerHTML=lop;
+			cell4.innerHTML=truong;
+			cell5.innerHTML='<input type="submit" name="edit" value="Edit" onclick="edit()">';
+			cell6.innerHTML='<input type="submit" name="delete" value="Delete" onclick="xoa()">';	
+			}
+		}
+		for(var i=1;i<table.rows.length;i++){
+			table.rows[i].onclick=function(){
+				document.getElementById('mahocsinh').value=this.cells[0].innerHTML;
+				document.getElementById('hoten').value=this.cells[1].innerHTML;
+				document.getElementById('lop').value=this.cells[2].innerHTML;
+				document.getElementById('truong').value=this.cells[3].innerHTML;
+				}
+			}
+		for(var i=1;i<table.rows.length;i++){
+			table.rows[i].cells[4].children[0].onclick=function(){
+				var check=confirm("Bạn có muốn thay đổi không???");
+				if(check==true){
+					this.parentNode.parentNode.cells[0].innerHTML=document.getElementById('mahocsinh').value;
+					this.parentNode.parentNode.cells[1].innerHTML=document.getElementById('hoten').value;;
+					this.parentNode.parentNode.cells[2].innerHTML=document.getElementById('lop').value;
+					this.parentNode.parentNode.cells[3].innerHTML=document.getElementById('truong').value;
+				}
+			}
+		}
+		for(var i=1;i<table.rows.length;i++){
+			table.rows[i].cells[5].children[0].onclick=function(){
+				var check=confirm("Bạn có muốn xóa hàng này không???");
+				if(check==true){
+					i=this.parentNode.parentNode.rowIndex;
+					this.parentNode.parentNode.parentNode.deleteRow(i);
+				}
+			}
+		}
+		function edit(){
+			for(var i=1;i<table.rows.length;i++){
+				table.rows[i].onclick=function(){
+					document.getElementById('mahocsinh').value=this.cells[0].innerHTML;
+					document.getElementById('hoten').value=this.cells[1].innerHTML;
+					document.getElementById('lop').value=this.cells[2].innerHTML;
+					document.getElementById('truong').value=this.cells[3].innerHTML;
+				}
+			}
+			for(var i=1;i<table.rows.length;i++){
+				table.rows[i].cells[4].children[0].onclick=function(){
+					var check=confirm("Bạn có muốn thay đổi không???");
+					if(check==true){
+						this.parentNode.parentNode.cells[0].innerHTML=document.getElementById('mahocsinh').value;
+						this.parentNode.parentNode.cells[1].innerHTML=document.getElementById('hoten').value;;
+						this.parentNode.parentNode.cells[2].innerHTML=document.getElementById('lop').value;
+						this.parentNode.parentNode.cells[3].innerHTML=document.getElementById('truong').value;
+					}
+				}
+			}
+		}
+		function xoa(){
+			for(var i=1;i<table.rows.length;i++){
+			table.rows[i].cells[5].children[0].onclick=function(){
+				var check=confirm("Bạn có muốn xóa hàng này không???");
+				if(check==true){
+					i=this.parentNode.parentNode.rowIndex;
+					this.parentNode.parentNode.parentNode.deleteRow(i);
+				}
+			}
+		}
+		}
+	</script>
+</body>
+</html>
