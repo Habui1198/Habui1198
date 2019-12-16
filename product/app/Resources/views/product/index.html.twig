@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+{% block title %}Products List{% endblock %}
+{% block style %}
+	.alert{
+		margin-top:10px;
+	}
+{% endblock %}
+{% block body %}
+	<div class="container">
+		<h1>Products List</h1>
+		<a class="btn btn-success" href="./create">Add Product <i class="fa fa-plus"></i><a>
+		{% for msg in app.session.flashBag.get('success') %}
+			<p class="alert alert-success">{{msg}}</p>
+		{% endfor %}
+		<table class="table" style="margin-top: 20px">
+		  	<thead>
+			    <tr>
+			      <th scope="col">#</th>
+			      <th scope="col">Name</th>
+			      <th scope="col">Description</th>
+			      <th scope="col">Unit_price</th>
+			      <th scope="col">Qty</th>
+			      <th scope="col" colspan="2">Action</th>
+			    </tr>
+		  	</thead>
+		  	<tbody>
+		  	{% for product in products %}
+			    <tr>
+			      <th scope="row">{{product.id}}</th>
+			      <td>{{product.name}}</td>
+			      <td>{{product.description}}</td>
+			      <td>{{product.unitPrice}}</td>
+			      <td>{{product.qty}}</td>
+			      <td><a href="./edit/{{product.id}}" class="btn btn-xs btn-info">Edit <i class="fa fa-pencil-square"></i></a></td>
+			      <td><a href="./delete/{{product.id}}" class="btn btn-xs btn-danger">Delete <i class="fa fa-trash"></i></a></td>
+			    </tr>
+			</tbody>
+			{% endfor %}
+		</table>
+	</div>
+{%endblock%}
